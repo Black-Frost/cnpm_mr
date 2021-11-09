@@ -51,7 +51,7 @@ const toggleSelfie = async () => {
 
 const showVideo = () => {
   const selfieSegmentation = new SelfieSegmentation({locateFile: (file) => {
-    return `${file}`;
+    return `./${file}`;
     }});
     selfieSegmentation.setOptions({
     modelSelection: 1,
