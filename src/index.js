@@ -1,7 +1,7 @@
 import {SelfieSegmentation} from "@mediapipe/selfie_segmentation";
 import "@mediapipe/control_utils";
 import "@mediapipe/drawing_utils";
-import "@mediapipe/camera_utils";
+import {Camera} from "@mediapipe/camera_utils";
 
 const handleFetchImage = async () => {
   const url = document.getElementById("input-text").value
