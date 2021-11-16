@@ -56,7 +56,7 @@ const toggleSelfie = async () => {
 
 const showVideo = () => {
   const selfieSegmentation = new SelfieSegmentation({locateFile: (file) => {
-    return `${file}`;
+    return `https://cdn.jsdelivr.net/npm/@mediapipe/selfie_segmentation/${file}`;
     }});
     selfieSegmentation.setOptions({
     modelSelection: 1,
