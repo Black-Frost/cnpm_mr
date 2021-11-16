@@ -1,4 +1,4 @@
-import SelfieSegmentation from "@mediapipe/selfie_segmentation";
+import {SelfieSegmentation} from "@mediapipe/selfie_segmentation";
 import "@mediapipe/control_utils";
 import "@mediapipe/drawing_utils";
 import "@mediapipe/camera_utils";
