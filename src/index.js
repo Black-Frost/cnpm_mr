@@ -24,14 +24,6 @@ const handleFetchImage = async () => {
   catch(err) {
     alert("Cannot fetch the image")
   }
-
-  // img.src = url
-  // try {
-  //   showVideo()
-  // }
-  // catch(err) {
-  //   alert("Cannot fetch image")
-  // }
 }
 
 const toggleSelfie = async () => {
