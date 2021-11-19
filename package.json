@@ -1,10 +1,14 @@
 {
-  "name": "cnpm_mr",
+  "name": "my-webpack-project",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "My webpack project",
+  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=production --node-env=production",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "watch": "webpack --watch"
   },
   "author": "",
   "license": "ISC",
@@ -13,10 +17,15 @@
     "@mediapipe/control_utils": "^0.6.1629159505",
     "@mediapipe/drawing_utils": "^0.3.1620248257",
     "@mediapipe/selfie_segmentation": "^0.1.1632777926",
-    "lodash": "^4.17.21"
+    "@types/es6-promise": "^3.3.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "lodash": "^4.17.21",
+    "source-map-loader": "^3.0.0"
   },
   "devDependencies": {
-    "webpack": "^5.62.1",
+    "@webpack-cli/generators": "^2.4.1",
+    "typescript": "^4.5.2",
+    "webpack": "^5.64.1",
     "webpack-cli": "^4.9.1"
   }
 }
