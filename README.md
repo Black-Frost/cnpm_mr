@@ -1,6 +1,12 @@
-# 🚀 Welcome to your new awesome project!
+# 🚀 Virtual background
 
-This project has been created using **webpack-cli**, you can now run
+### Install the required dependencies
+```
+npm install
+```
+
+### Build the project
+This project has been created using **webpack-cli**, you can run
 
 ```
 npm run build
@@ -13,3 +19,5 @@ yarn build
 ```
 
 to bundle your application
+
+Now you can host your application using the files in the `dist` folder.
