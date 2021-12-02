@@ -3,8 +3,10 @@ import "@mediapipe/control_utils";
 import "@mediapipe/drawing_utils";
 import {Camera} from "@mediapipe/camera_utils";
 
+var blurMode = false;
 
 const handleFetchImage = async () => {
+  blurMode = false;
   const url = (<HTMLInputElement>document.getElementById("input-text")).value
   if (url.length == 0) {
     alert("Please enter image URL")
@@ -73,15 +75,28 @@ function onResults(results: any) {
                       canvasElement.width, canvasElement.height);
 
   // Only overwrite existing pixels.
-
+  if (blurMode){
+  canvasCtx!.filter = `blur(15px)`;
+  canvasCtx!.globalCompositeOperation = 'source-out';
+  canvasCtx!.drawImage(results.image, 0, 0, canvasElement.width, canvasElement.height);
+  canvasCtx!.filter = `none`;
+  }
+  else{
   canvasCtx!.globalCompositeOperation = 'source-out';
   canvasCtx!.drawImage(img, 0, 0, img.width, img.height, 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+  }
+  
   // Only overwrite missing pixels.
 
   canvasCtx!.globalCompositeOperation = 'destination-atop';
   canvasCtx!.drawImage(results.image, 0, 0, canvasElement.width, canvasElement.height);
 
   canvasCtx!.restore();
+}
+
+const handleBlur = () => {
+  blurMode = true;
+  showVideo();	
 }
 
 const CANVAS_WIDTH = 640;
@@ -100,3 +115,4 @@ const img = new Image()
 
 document.getElementById("input-btn")!.addEventListener("click", handleFetchImage)
 document.getElementById("selfie-btn")!.addEventListener("click", toggleSelfie)
+document.getElementById("blur-btn")!.addEventListener("click", handleBlur)
